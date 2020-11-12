@@ -26,6 +26,8 @@ urlpatterns = [
     path('test/', include('testapp.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('__debug__/', include(debug_toolbar.urls)),
+    path('api-auth/', include('rest_framework.urls')),
+    path('api-v1/', include('restblog.urls'))
 ]
 
 if settings.DEBUG:

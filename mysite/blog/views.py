@@ -4,6 +4,7 @@ from django.views.generic import ListView, DetailView
 from .models import *
 from django.db.models import F
 
+
 class Home(ListView):
     model = Post
     template_name = 'blog/index.html'
@@ -29,6 +30,10 @@ class PostsByCategory(ListView):
         context = super().get_context_data(**kwargs)
         context['title'] = Category.objects.get(slug=self.kwargs['slug'])
         return context
+
+
+
+
 
 class GetPost(DetailView):
     model = Post
